@@ -14,7 +14,7 @@ int getfunc(char c, va_list lust)
 {
 	int n, j;
 
-	struct print_type print_fc[] = {
+	printtype print_fc[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'%', print_percent},
