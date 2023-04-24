@@ -36,3 +36,18 @@ int print_string(va_list lust)
 	return (i);
 
 }
+
+/**
+* print_percent - print character
+* @lust : list argument
+* Return: return number of characters
+*/
+
+int print_percent(__attribute__((unused))va_list lust)
+{
+	char c;
+
+	c = '%';
+	put_ch(c);
+	return (1);
+}
