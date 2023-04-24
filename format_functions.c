@@ -27,7 +27,8 @@ int print_string(va_list lust)
 {
 	int i = 0;
 	char *str = va_arg(lust, char *);
-
+	if (str == NULL)
+		str = "(null)";
 	while (str[i] != '\0')
 	{
 		put_ch(str[i]);
@@ -50,4 +51,26 @@ int print_percent(__attribute__((unused))va_list lust)
 	c = '%';
 	put_ch(c);
 	return (1);
+}
+
+/**
+* print_number - print number
+* @lust : list argument
+* Return: return lenght
+*/
+int print_number(int num)
+{
+	int ln = 0;
+
+	if (num < 0)
+	{
+		put_ch('-');
+		num = -num;
+		ln++;
+	}
+	if (num / 10)
+		ln += print_number(num / 10);
+	put_ch(num % 10 + '0');
+	ln++;
+	return (ln);
 }

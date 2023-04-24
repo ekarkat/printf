@@ -22,5 +22,7 @@ int _printf(const char *format, ...);
 int print_string(va_list lust);
 int print_char(va_list lust);
 int print_percent(va_list lust);
-
+int getfunc (char c, va_list lust);
+int test_c (char c);
+int print_number(int num);
 #endif
