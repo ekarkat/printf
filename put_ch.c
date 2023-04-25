@@ -27,7 +27,7 @@ int put_num(int num)
 	if (num < 0)
 	{
 		put_ch('-');
-		num = -num;
+		num = num * (-1);
 		ln++;
 	}
 	if (num / 10)
