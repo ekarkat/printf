@@ -53,3 +53,20 @@ int print_percent(__attribute__((unused))va_list lust)
 	put_ch(c);
 	return (1);
 }
+
+/**
+ * print_number - Print an integer argument passed through va_list
+ *
+ * @lust: The va_list containing the integer argument
+ *
+ * Return: The number of characters printed
+ */
+int print_number(va_list lust)
+{
+	int ln = 0;
+	int num = va_arg(lust, int);
+
+	ln = put_num(num);
+
+	return (ln);
+}
