@@ -12,3 +12,29 @@ int put_ch(char c)
 {
 	return (write(1, &c, 1));
 }
+
+/**
+ * put_num - Print an integer to stdout
+ *
+ * @num: The integer to be printed
+ *
+ * Return: The number of characters printed
+ */
+int put_num(int num)
+{
+	int ln = 0;
+
+	if (num < 0)
+	{
+		put_ch('-');
+		num = -num;
+		ln++;
+	}
+	if (num / 10)
+		ln += put_num(num / 10);
+
+	put_ch(num % 10 + '0');
+	ln++;
+
+	return (ln);
+}
