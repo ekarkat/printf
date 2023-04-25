@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
-
+#include <limits.h>
 /**
  * struct print_type - name of the structure
  * @ch : character type of specifier
