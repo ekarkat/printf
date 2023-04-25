@@ -4,6 +4,14 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+const struct print_type print_fc[] = {
+	{'c', print_char},
+	{'s', print_string},
+	{'%', print_percent},
+	{'d', print_number},
+	{'i', print_number},
+	{'\0', NULL}
+};
 /**
 *getfunc - get the right print function
 *@c : the type of conversion s or c or d ...
@@ -13,13 +21,6 @@
 int getfunc(char c, va_list lust)
 {
 	int n, j;
-
-	printtype print_fc[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'%', print_percent},
-		{'\0', NULL}
-	};
 
 	j = 0;
 	while (print_fc[j].ch != '\0')
@@ -42,20 +43,13 @@ int getfunc(char c, va_list lust)
 	return (n);
 }
 /**
-*test_c - test char
-*@c : char to test
-*Return: 1 or 0
+*test_c - test if the next char in format is a valid specifier or not
+*@c : char == format[i] in printf function
+*Return: 1 if its valid or 0
 */
 int test_c(char c)
 {
 	int j = 0;
-
-	printtype print_fc[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'%', print_percent},
-		{'\0', NULL}
-	};
 
 	while (print_fc[j].ch != '\0')
 	{
