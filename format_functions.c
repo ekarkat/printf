@@ -66,14 +66,6 @@ int print_number(va_list lust)
 	int ln = 0;
 	int num = va_arg(lust, int);
 
-	if (num == INT_MIN)
-	{
-		put_num('-');
-		put_num('2');
-		put_num(147483648);
-		ln += 2;
-		return (ln);
-	}
 	ln = put_num(num);
 
 	return (ln);

@@ -38,3 +38,26 @@ int put_num(int num)
 
 	return (ln);
 }
+
+/**
+ * print_str - Print an integer to stdout
+ *
+ * @str: The integer to be printed
+ *
+ * Return: The number of characters printed
+ */
+
+int print_str(char *str)
+{
+	int i = 0;
+
+	if (str == NULL)
+		str = "(null)";
+	while (str[i] != '\0')
+	{
+		put_ch(str[i]);
+		i++;
+	}
+	return (i);
+
+}

@@ -19,6 +19,11 @@ typedef struct print_type
 
 extern const struct print_type print_fc[7];
 
+int str_len(const char *str);
+void reverse_string(char *str);
+int print_str(char *str);
+int print_binary(va_list lust);
+char *dec_to_binary(unsigned int num);
 int put_num(int num);
 int put_ch(char c);
 int _printf(const char *format, ...);

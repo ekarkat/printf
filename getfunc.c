@@ -10,6 +10,7 @@ const struct print_type print_fc[] = {
 	{'%', print_percent},
 	{'d', print_number},
 	{'i', print_number},
+	{'b', print_binary},
 	{'\0', NULL}
 };
 /**
