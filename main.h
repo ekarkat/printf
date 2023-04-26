@@ -17,10 +17,18 @@ typedef struct print_type
 	int (*print)(va_list lust);
 } printtype;
 
-extern const struct print_type print_fc[7];
+extern const struct print_type print_fc[15];
 
-int str_len(const char *str);
+int str_ln(const char *str);
 void reverse_string(char *str);
+int print_unsint(va_list lust);
+int put_unsi(unsigned int n);
+int print_octal(va_list lust);
+int put_octal(int num);
+int print_hex(va_list lust);
+int put_hex(int num);
+int print_hexx(va_list lust);
+int put_hexx(int num);
 int print_str(char *str);
 int print_binary(va_list lust);
 char *dec_to_binary(unsigned int num);

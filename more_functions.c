@@ -1,44 +1,6 @@
 #include "main.h"
 
 /**
- * str_ln - Reverse a string in place
- *
- * @str: The string to be reversed
- *
- * Return: return lenght
- */
-int str_ln(const char *str)
-{
-	size_t len = 0;
-
-	while (*str != '\0')
-	{
-		len++;
-		str++;
-	}
-	return (len);
-}
-/**
- * reverse_string - Reverse a string in place
- *
- * @str: The string to be reversed
- */
-void reverse_string(char *str)
-{
-	int start = 0;
-	int end = str_ln(str) - 1;
-	char temp;
-
-	while (start < end)
-	{
-		temp = str[start];
-		str[start] = str[end];
-		str[end] = temp;
-		start++;
-		end--;
-	}
-}
-/**
  * dec_to_binary - Convert a decimal integer to binary
  *
  * @num: The decimal integer to be converted
@@ -78,23 +40,115 @@ char *dec_to_binary(unsigned int num)
 
 }
 
+
 /**
- * print_binary - Convert a decimal integer to binary
+ * put_unsi - print unsigned number
  *
- * @lust: The decimal integer to be converted
+ * @n: The decimal integer to be converted
  *
  * Return: A string containing the binary representation of the input integer
  */
 
-int print_binary(va_list lust)
+int put_unsi(unsigned int n)
 {
-	int num = va_arg(lust, int);
-	char *str_bin;
-	int ln;
+	int ln = 0;
+	unsigned int num;
 
-	if (num < 1)
-		return (-1);
-	str_bin = dec_to_binary(num);
-	ln = print_str(str_bin);
+	num = n;
+	if (num / 10)
+		ln += put_num(num / 10);
+
+	put_ch(num % 10 + '0');
+	ln++;
+
 	return (ln);
+}
+
+/**
+ * put_octal - print number in octal format
+ * @num : number
+ * Return: lenght of the number
+*/
+
+int put_octal(int num)
+{
+	int len = 0;
+
+	if (num < 0)
+	{
+		put_ch('-');
+		num = -num;
+		len++;
+	}
+	if (num >= 8)
+	{
+		len += put_octal(num / 8);
+	}
+	put_ch((num % 8) + '0');
+	len++;
+	return (len);
+}
+
+/**
+ * put_hex - Prints a number in hexadecimal form
+ *
+ * @num: The number to print
+ *
+ * Return: The length of the printed number
+ */
+int put_hex(int num)
+{
+	int len = 0, digit;
+
+	if (num < 0)
+	{
+		put_ch('-');
+		num = -num;
+		len++;
+	}
+
+	if (num >= 16)
+		len += put_hex(num / 16);
+
+	digit = num % 16;
+
+	if (digit < 10)
+		put_ch(digit + '0');
+	else
+		put_ch(digit - 10 + 'a');
+
+	len++;
+	return (len);
+}
+
+/**
+ * put_hexx - Prints a number in hexadecimal form
+ *
+ * @num: The number to print
+ *
+ * Return: The length of the printed number
+ */
+int put_hexx(int num)
+{
+	int len = 0, digit;
+
+	if (num < 0)
+	{
+		put_ch('-');
+		num = -num;
+		len++;
+	}
+
+	if (num >= 16)
+		len += put_hex(num / 16);
+
+	digit = num % 16;
+
+	if (digit < 10)
+		put_ch(digit + '0');
+	else
+		put_ch(digit - 10 + 'A');
+
+	len++;
+	return (len);
 }

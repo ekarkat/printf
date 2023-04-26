@@ -11,6 +11,10 @@ const struct print_type print_fc[] = {
 	{'d', print_number},
 	{'i', print_number},
 	{'b', print_binary},
+	{'u', print_unsint},
+	{'o', print_octal},
+	{'x', print_hex},
+	{'X', print_hexx},
 	{'\0', NULL}
 };
 /**
