@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <limits.h>
+
 /**
  * struct print_type - name of the structure
  * @ch : character type of specifier
@@ -42,4 +43,5 @@ int print_percent(va_list lust);
 int getfunc(char c, va_list lust);
 int test_c(char c);
 int print_number(va_list lust);
+
 #endif
