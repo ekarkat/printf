@@ -71,7 +71,7 @@ int print_hex(va_list lust)
 }
 
 /**
- * print_hex - Print hex format of a number
+ * print_hexx - Print hex format of a number
  *
  * @lust: The decimal integer to be converted
  *
