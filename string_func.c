@@ -39,3 +39,25 @@ int str_ln(const char *str)
 	}
 	return (len);
 }
+
+/**
+* print_rev_string - print character
+* @lust : list argument
+* Return: return number of characters
+*/
+
+int print_rev_string(va_list lust)
+{
+	int i = 0;
+	char *str = va_arg(lust, char *);
+
+	reverse_string(str);
+	if (str == NULL)
+		str = "(null)";
+	while (str[i] != '\0')
+	{
+		put_ch(str[i]);
+		i++;
+	}
+	return (i);
+}

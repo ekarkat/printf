@@ -30,6 +30,7 @@ int put_hex(int num);
 int print_hexx(va_list lust);
 int put_hexx(int num);
 int print_str(char *str);
+int print_rev_string(va_list lust);
 int print_binary(va_list lust);
 char *dec_to_binary(unsigned int num);
 int put_num(int num);

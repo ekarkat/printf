@@ -15,6 +15,7 @@ const struct print_type print_fc[] = {
 	{'o', print_octal},
 	{'x', print_hex},
 	{'X', print_hexx},
+	{'r', print_rev_string},
 	{'\0', NULL}
 };
 /**
